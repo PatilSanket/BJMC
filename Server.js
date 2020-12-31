@@ -66,8 +66,8 @@ app.listen(8000, () => {
     // http://localhost:8000/Results/course
     app.get("/Results/:course", results.res_course);
 
-    // http://localhost:8000/Results/Seat_No
-    app.get("/Results/:seat_number", res_id.res_id);
+   // http://localhost:8000/Resultsbyid/Seat_No
+    app.get("/Resultsbyid/:seat_number", res_id.res_id);
     
     // http://localhost:8000/Resultsbycourse/course
     app.get("/Resultsbycourse/:seat_number", res_id.res_course );
