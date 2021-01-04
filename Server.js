@@ -13,6 +13,8 @@ const res_yr = require("./Routes/Result-Year");
 const research_publications = require('./Routes/Research-Publications');
 const organogram = require('./Routes/organogram');
 const files = require('./Routes/Files');
+const academic_activities = require('./Routes/Academic-activities');
+const awards_achievements = require('./Routes/Awards-achievements');
 const url = require("./DBConfig");
 
 const CONNECTION_URL = url;
@@ -43,6 +45,9 @@ app.listen(8000, () => {
         collection7 = database.collection("research_publications");
         collection8 = database.collection("organogram");
         collection9 = database.collection("file_links");
+        collection10 = database.collection("academic_activities");
+        collection11 = database.collection("awards_achievements");
+        
         console.log("Connected to `" + DATABASE_NAME + "`!");
     });
 
@@ -85,5 +90,11 @@ app.listen(8000, () => {
 
     // http://localhost:8000/files/path
     app.get("/files/:path", files.res_files);
+    
+    // http://localhost:8000/academic-activities
+    app.get("/academic-activities", academic_activities.academic_activities);
+    
+    // http://localhost:8000/awards-achievements
+    app.get("/awards-achievements", awards_achievements.awards_achievements);
 });
 

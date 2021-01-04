@@ -37,6 +37,10 @@ http://localhost:8000/teachers/Anatomy OR Mention department after /
     <br>
     http://localhost:8000/research_publications
     <br>
+    http://localhost:8000/academic-activities
+    <br>
+    http://localhost:8000/awards-achievements
+    <br>
     http://localhost:8000/files/path<br>
     Usage
     <li>http://localhost:8000/files/departments</li>
