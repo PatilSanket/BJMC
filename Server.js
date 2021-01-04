@@ -12,6 +12,7 @@ const res_id = require("./Routes/Result-ID");
 const res_yr = require("./Routes/Result-Year");
 const research_publications = require('./Routes/Research-Publications');
 const organogram = require('./Routes/organogram');
+const files = require('./Routes/Files');
 const url = require("./DBConfig");
 
 const CONNECTION_URL = url;
@@ -41,44 +42,48 @@ app.listen(8000, () => {
         collection6 = database.collection("result_year");
         collection7 = database.collection("research_publications");
         collection8 = database.collection("organogram");
+        collection9 = database.collection("file_links");
         console.log("Connected to `" + DATABASE_NAME + "`!");
     });
 
 
-    // http://localhost:8000/Teachers
-    app.get("/Teachers", teachers.teachers);
+    // http://localhost:8000/teachers
+    app.get("/teachers", teachers.teachers);
 
-    // http://localhost:8000/Teachers/Anatomy
-    app.get("/Teachers/:dept", dept.dept);
+    // http://localhost:8000/teachers/Anatomy
+    app.get("/teachers/:dept", dept.dept);
     
-    // http://localhost:8000/Anti-Ragging
-    app.get("/Anti-Ragging", anti_ragging.anti_ragging);
+    // http://localhost:8000/anti-ragging
+    app.get("/anti-ragging", anti_ragging.anti_ragging);
 
-    // http://localhost:8000/Non-Teaching
-    app.get("/Non-Teaching", non_teaching.non_teaching);
+    // http://localhost:8000/non-teaching
+    app.get("/non-teaching", non_teaching.non_teaching);
 
      // http://localhost:8000/Resources
      app.get("/Resources", resources.resources);
    
-    // http://localhost:8000/Results
-    app.get("/Results", results.results);
+    // http://localhost:8000/results
+    app.get("/results", results.results);
 
-    // http://localhost:8000/Results/course
-    app.get("/Results/:course", results.res_course);
+    // http://localhost:8000/results/course
+    app.get("/results/:course", results.res_course);
 
-   // http://localhost:8000/Resultsbyid/Seat_No
-    app.get("/Resultsbyid/:seat_number", res_id.res_id);
+   // http://localhost:8000/resultsbyid/Seat_No
+    app.get("/resultsbyid/:seat_number", res_id.res_id);
     
-    // http://localhost:8000/Resultsbycourse/course
-    app.get("/Resultsbycourse/:seat_number", res_id.res_course );
+    // http://localhost:8000/resultsbycourse/course
+    app.get("/resultsbycourse/:seat_number", res_id.res_course );
 
-    //http://localhost:8000/Results_Year/
-    app.get("/Results_Year/", res_yr.res_yr);
+    //http://localhost:8000/results_year/
+    app.get("/results_year/", res_yr.res_yr);
     
-    //http://localhost:8000/Research_publications/
-    app.get("/Research_Publications/", research_publications.Research_Publications);
+    //http://localhost:8000/research_publications/
+    app.get("/research_Publications/", research_publications.Research_Publications);
     
-    //http://localhost:8000/Research_publications/
+    //http://localhost:8000/organogram/
     app.get("/organogram/", organogram.organogram);
+
+    // http://localhost:8000/files/path
+    app.get("/files/:path", files.res_files);
 });
 
