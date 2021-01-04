@@ -12,11 +12,12 @@
 
 
 
-<h3>To Access Data from API use following links
+<h3>To Access Data from API use following links <br> Replace localhost:8000 with 13.232.107.115:8000
 </h3>
 <br>
 
 http://localhost:8000/teachers
+
 <br>
 
 http://localhost:8000/teachers/Anatomy OR Mention department after /
