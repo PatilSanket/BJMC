@@ -52,7 +52,7 @@ app.listen(8000, () => {
         collection9 = database.collection("file_links");
         collection10 = database.collection("academic_activities");
         collection11 = database.collection("awards_achievements");
-        
+        collection12 = database.collection("registration");
         console.log("Connected to `" + DATABASE_NAME + "`!");
     });
 
@@ -101,5 +101,12 @@ app.listen(8000, () => {
     
     // http://localhost:8000/awards-achievements
     app.get("/awards-achievements", awards_achievements.awards_achievements);
+
+    app.post("/register",(req,res)=>{
+       collection12.insertOne(req.body.obj);
+       
+        //console.log(req.body.obj)
+        res.send(true);
+    })
 });
 
